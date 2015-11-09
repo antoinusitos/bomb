@@ -53,6 +53,7 @@ public class Bomb : MonoBehaviour {
 
     public int serialgame = 0;
     public int simon = 0;
+    public int radio = 0;
 
 	// Use this for initialization
 	void Start ()
@@ -192,9 +193,15 @@ public class Bomb : MonoBehaviour {
         CheckFinished();
     }
 
+    public void FinishedRadio()
+    {
+        radio = 1;
+        CheckFinished();
+    }
+
     void CheckFinished()
     {
-        if(simon==1 && serialgame==1)
+        if (simon == 1 && serialgame == 1 && radio == 1)
         {
             ShowFinishLed();
         }
